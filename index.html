@@ -29,7 +29,7 @@
 
     body {
       height: 100vh;
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background: url('aesthetic-cloud-image.jpg') no-repeat center center fixed;
       background-size: cover;
       display: flex;
       flex-direction: column;
@@ -40,18 +40,6 @@
       transition: background-color 0.4s;
       color: var(--text-light);
     }
-
-    /* Overlay tint */
-    body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: var(--bg-light);
-      z-index: 0;
-      transition: background-color 0.4s;
-    }
-
-    /* Hide checkbox */
     #themeToggle {
       display: none;
     }
@@ -65,7 +53,6 @@
       max-width: 400px;
     }
 
-    /* Toggle label styled as button */
     label.toggle-btn {
       position: absolute;
       top: 1rem;
@@ -87,7 +74,7 @@
       gap: 0.5rem;
     }
 
-    /* Icon inside label */
+
     label.toggle-btn .icon {
       font-size: 1.2rem;
     }
@@ -122,10 +109,10 @@
       transition: color 0.4s;
     }
 
-    /* Dark mode styles when checkbox is checked */
+   
     #themeToggle:checked ~ body,
     #themeToggle:checked ~ .content {
-      /* We cannot select body itself with sibling selector, so use another way */
+   
     }
 
     #themeToggle:checked ~ .content input {
@@ -172,13 +159,11 @@
       display: inline-block;
     }
 
-    /* Overlay tint dark mode */
     #themeToggle:checked ~ body::before {
       background-color: var(--bg-dark);
     }
 
-    /* Since we cannot select body::before with sibling selector, 
-       move overlay to a separate div */
+
 
     /* Responsive */
     @media (max-width: 500px) {
@@ -200,7 +185,7 @@
 </head>
 <body>
 
-  <!-- Hidden checkbox for toggle -->
+
   <input type="checkbox" id="themeToggle" />
 
   <!-- Toggle Button Label -->
@@ -219,3 +204,6 @@
 
 </body>
 </html>
+
+
+
