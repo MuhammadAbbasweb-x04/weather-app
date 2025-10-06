@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather Search UI with CSS Toggle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-light: rgba(255, 255, 255, 0.85);
+      --bg-dark: rgba(0, 0, 0, 0.6);
+      --text-light: #333;
+      --text-dark: #eee;
+      --btn-bg-light: #4fc3f7;
+      --btn-bg-dark: #00796b;
+      --input-bg-light: white;
+      --input-bg-dark: #333;
+      --cloud-color-light: #4fc3f7;
+      --cloud-color-dark: #81d4fa;
+    }
+
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      position: relative;
+      transition: background-color 0.4s;
+      color: var(--text-light);
+    }
+
+    /* Overlay tint */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: var(--bg-light);
+      z-index: 0;
+      transition: background-color 0.4s;
+    }
+
+    /* Hide checkbox */
+    #themeToggle {
+      display: none;
+    }
+
+    /* Content container */
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    /* Toggle label styled as button */
+    label.toggle-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: var(--btn-bg-light);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      user-select: none;
+      transition: background-color 0.3s, color 0.3s;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    /* Icon inside label */
+    label.toggle-btn .icon {
+      font-size: 1.2rem;
+    }
+
+    /* Search input container */
+    .search-container {
+      position: relative;
+      margin-top: 2rem;
+    }
+
+    .search-container input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 3rem;
+      border-radius: 30px;
+      border: none;
+      background-color: var(--input-bg-light);
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      color: var(--text-light);
+      outline: none;
+      transition: background-color 0.4s, color 0.4s;
+    }
+
+    .search-container .icon {
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: var(--cloud-color-light);
+      pointer-events: none;
+      transition: color 0.4s;
+    }
+
+    /* Dark mode styles when checkbox is checked */
+    #themeToggle:checked ~ body,
+    #themeToggle:checked ~ .content {
+      /* We cannot select body itself with sibling selector, so use another way */
+    }
+
+    #themeToggle:checked ~ .content input {
+      background-color: var(--input-bg-dark);
+      color: var(--text-dark);
+    }
+
+    #themeToggle:checked ~ .content .icon {
+      color: var(--cloud-color-dark);
+    }
+
+    #themeToggle:checked ~ label.toggle-btn {
+      background-color: var(--btn-bg-dark);
+      color: white;
+    }
+
+    #themeToggle:checked ~ label.toggle-btn .icon {
+      content: "☀️";
+    }
+
+    /* Actually toggle icon change */
+    #themeToggle:not(:checked) ~ label.toggle-btn .sun {
+      display: none;
+    }
+
+    #themeToggle:checked ~ label.toggle-btn .moon {
+      display: none;
+    }
+
+    /* Show/hide icons */
+    label.toggle-btn .moon {
+      display: inline-block;
+    }
+
+    label.toggle-btn .sun {
+      display: none;
+    }
+
+    #themeToggle:checked ~ label.toggle-btn .moon {
+      display: none;
+    }
+
+    #themeToggle:checked ~ label.toggle-btn .sun {
+      display: inline-block;
+    }
+
+    /* Overlay tint dark mode */
+    #themeToggle:checked ~ body::before {
+      background-color: var(--bg-dark);
+    }
+
+    /* Since we cannot select body::before with sibling selector, 
+       move overlay to a separate div */
+
+    /* Responsive */
+    @media (max-width: 500px) {
+      label.toggle-btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      .search-container input {
+        font-size: 0.9rem;
+        padding-left: 2.5rem;
+      }
+
+      .search-container .icon {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hidden checkbox for toggle -->
+  <input type="checkbox" id="themeToggle" />
+
+  <!-- Toggle Button Label -->
+  <label for="themeToggle" class="toggle-btn">
+    <span class="moon">🌙</span>
+    <span class="sun">☀️</span>
+    Dark
+  </label>
+
+  <div class="content">
+    <div class="search-container">
+      <span class="icon">☁️</span>
+      <input type="text" placeholder="Search city..." />
+    </div>
+  </div>
+
+</body>
+</html>
