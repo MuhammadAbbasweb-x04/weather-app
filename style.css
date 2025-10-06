@@ -1,3 +1,10 @@
+   * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
  :root {
       --bg-light: rgba(255, 255, 255, 0.85);
       --bg-dark: rgba(0, 0, 0, 0.6);
@@ -10,15 +17,7 @@
       --cloud-color-light: #4fc3f7;
       --cloud-color-dark: #81d4fa;
     }
-
-    /* Reset */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-    }
-
+ 
     body {
       height: 100vh;
       background: url('aesthetic-cloud-image.jpg') no-repeat center center fixed;
