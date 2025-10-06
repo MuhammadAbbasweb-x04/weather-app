@@ -1,0 +1,175 @@
+ :root {
+      --bg-light: rgba(255, 255, 255, 0.85);
+      --bg-dark: rgba(0, 0, 0, 0.6);
+      --text-light: #333;
+      --text-dark: #eee;
+      --btn-bg-light: #4fc3f7;
+      --btn-bg-dark: #00796b;
+      --input-bg-light: white;
+      --input-bg-dark: #333;
+      --cloud-color-light: #4fc3f7;
+      --cloud-color-dark: #81d4fa;
+    }
+
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: url('aesthetic-cloud-image.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      position: relative;
+      transition: background-color 0.4s;
+      color: var(--text-light);
+    }
+    #themeToggle {
+      display: none;
+    }
+
+    /* Content container */
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    label.toggle-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: var(--btn-bg-light);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      user-select: none;
+      transition: background-color 0.3s, color 0.3s;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+
+    label.toggle-btn .icon {
+      font-size: 1.2rem;
+    }
+
+    /* Search input container */
+    .search-container {
+      position: relative;
+      margin-top: 2rem;
+    }
+
+    .search-container input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 3rem;
+      border-radius: 30px;
+      border: none;
+      background-color: var(--input-bg-light);
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      color: var(--text-light);
+      outline: none;
+      transition: background-color 0.4s, color 0.4s;
+    }
+
+    .search-container .icon {
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: var(--cloud-color-light);
+      pointer-events: none;
+      transition: color 0.4s;
+    }
+
+   
+    #themeToggle:checked ~ body,
+    #themeToggle:checked ~ .content {
+   
+    }
+
+    #themeToggle:checked ~ .content input {
+      background-color: var(--input-bg-dark);
+      color: var(--text-dark);
+    }
+
+    #themeToggle:checked ~ .content .icon {
+      color: var(--cloud-color-dark);
+    }
+
+    #themeToggle:checked ~ label.toggle-btn {
+      background-color: var(--btn-bg-dark);
+      color: white;
+    }
+
+    #themeToggle:checked ~ label.toggle-btn .icon {
+      content: "☀️";
+    }
+
+    /* Actually toggle icon change */
+    #themeToggle:not(:checked) ~ label.toggle-btn .sun {
+      display: none;
+    }
+
+    #themeToggle:checked ~ label.toggle-btn .moon {
+      display: none;
+    }
+
+    /* Show/hide icons */
+    label.toggle-btn .moon {
+      display: inline-block;
+    }
+
+    label.toggle-btn .sun {
+      display: none;
+    }
+
+    #themeToggle:checked ~ label.toggle-btn .moon {
+      display: none;
+    }
+
+    #themeToggle:checked ~ label.toggle-btn .sun {
+      display: inline-block;
+    }
+
+    #themeToggle:checked ~ body::before {
+      background-color: var(--bg-dark);
+    }
+
+
+
+    /* Responsive */
+    @media (max-width: 500px) {
+      label.toggle-btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      .search-container input {
+        font-size: 0.9rem;
+        padding-left: 2.5rem;
+      }
+
+      .search-container .icon {
+        font-size: 1rem;
+      }
+    }
