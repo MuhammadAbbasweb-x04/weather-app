@@ -68,68 +68,6 @@
     label.toggle-btn .icon {
       font-size: 1.2rem;
     }
-
-    /* Search input container
-    .search-container {
-      position: relative;
-      margin-top: 2rem;
-    }
-
-    .search-container input {
-      width: 100%;
-      padding: 0.75rem 1rem 0.75rem 3rem;
-      border-radius: 30px;
-      border: none;
-      background-color: var(--input-bg-light);
-      font-size: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      color: var(--text-light);
-      outline: none;
-      transition: background-color 0.4s, color 0.4s;
-    }
-
-
-
-     #check{
-padding: 10px 20px;
-border-radius: 5px;
-border: none;
-cursor: pointer;
-  background: rgba(119, 0, 119, 0.3); 
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    color: #141416; 
-    text-align: center;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 4px 30px rgba(128, 0, 128, 0.3);
-
-    }
-
-     #check:hover{
-  background: rgba(117, 3, 121, 0.3); 
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 4px 30px rgba(128, 0, 128, 0.3);
-
-    }
-
-
-
-
-    .search-container .icon {
-      position: absolute;
-      top: 50%;
-      left: 1rem;
-      transform: translateY(-50%);
-      font-size: 1.2rem;
-      color: var(--cloud-color-light);
-      pointer-events: none;
-      transition: color 0.4s;
-    }
-
-    */
-
-
  .weather-search {
     background: rgba(255, 255, 255, 0.15);
     border-radius: 20px;
