@@ -88,6 +88,32 @@
       transition: background-color 0.4s, color 0.4s;
     }
 
+     #check{
+padding: 10px 20px;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+  background: rgba(119, 0, 119, 0.3); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #141416; 
+    text-align: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 30px rgba(128, 0, 128, 0.3);
+
+    }
+
+     #check:hover{
+  background: rgba(117, 3, 121, 0.3); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 30px rgba(128, 0, 128, 0.3);
+
+    }
+
+
+
+
     .search-container .icon {
       position: absolute;
       top: 50%;
@@ -155,7 +181,7 @@
 
 
 
-    /* Responsive */
+
     @media (max-width: 500px) {
       label.toggle-btn {
         font-size: 0.9rem;
@@ -171,3 +197,52 @@
         font-size: 1rem;
       }
     }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .purple-weather-card {
+     width: 40%;
+    padding: 30px 50px;
+    border-radius: 12px;
+    background: rgba(128, 0, 128, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #141416;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 30px rgba(128, 0, 128, 0.3);
+    margin-top: 40px;
+  }
+
+  .city {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .temp {
+    font-size: 3rem;
+    margin: 10px 0;
+  }
+
+  .condition {
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+  }
+
+  .condition img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+  }
+
+  .condition span {
+    vertical-align: middle;
+  }

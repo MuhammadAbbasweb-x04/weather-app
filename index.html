@@ -22,10 +22,35 @@
   <div class="content">
     <div class="search-container">
       <span class="icon">☁️</span>
-      <input type="text" placeholder="Search city..." />
+      <form>
+      <input type="text" placeholder="Search city..." id="cite" />
+      <br><br>
+<button id="check">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
+    <path d="M19.36 10.46a7.49 7.49 0 0 0-14.74-1.29A5.5 5.5 0 0 0 5.5 20h13a4.5 4.5 0 0 0 .86-8.54z"/>
+  </svg>
+  Check your city weather
+</button>
+
+      </form>
     </div>
   </div>
 
+
+<div class="container">
+  <div class="purple-weather-card">
+    <div class="city">Lahore, Pakistan</div>
+    <div class="temp">28°C</div>
+    <div class="condition">
+      <img src="https://cdn.weatherapi.com/weather/64x64/day/113.png" alt="Sunny" />
+      <span>Sunny</span>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="app.js"></script>
 </body>
 </html>
 

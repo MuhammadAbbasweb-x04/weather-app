@@ -1,24 +1,29 @@
 
-const apiurl = "https://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q=Lahore";
-const apikey = "7b636e27f20645f4b4c90819250910";
+// let  url = "https://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q=Lahore";
+// let apikey = "";
+let card = document.querySelector(".purple-weather-card");
 
+let  cite = document.querySelector("#cite");
+let form = document.querySelector("form");
 
-axios(apiurl).then(res =>{
-console.log(res.data);
-console.log("hello");
+form.addEventListener("submit",  (event)=>{
+    event.preventDefault();
+axios(`https://api.weatherapi.com/v1/current.json?key=7b636e27f20645f4b4c90819250910=${cite.value}`).then(res =>{
+    console.log(res.data);
+card.innerHTML = `<div class="city">Lahore, Pakistan</div>
+  <div class="temp">28°C</div>
+  <div class="condition">
+    <img src="https://cdn.weatherapi.com/weather/64x64/day/113.png" alt="Sunny" />
+    <span>Sunny</span>
+  </div>`
+
 
 
 }).catch(err =>{
 
 console.log(err);
-
-
-
-
 })
-
-
-
+})
 
 
 
